@@ -1,5 +1,5 @@
 {
-  "python": "3.12.14",
+  "python": "3.15.0",
   "source_hashes": {
     "model.py": "e5210c64b7d8fe0c8ab223cdca9a53c106b54b1c71bf52806657c0140f012550",
     "run_analysis.py": "a031706b60e34b1a9a05839a01dc7216dff1d960e4ad8b0193604c7bcbe3e2c4",
