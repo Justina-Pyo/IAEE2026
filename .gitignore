@@ -8,3 +8,4 @@ results_alternative/
 
 .venv/
 __pycache__/
+.DS_Store

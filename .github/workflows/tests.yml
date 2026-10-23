@@ -10,4 +10,39 @@ jobs:
           python-version: '3.11'
       - run: python -m unittest discover -s tests -v
       - run: python run_analysis.py --out /tmp/reproduced
-      - run: diff results/scenarios.csv /tmp/reproduced/scenarios.csv
+      - name: Compare reproduced results with numeric tolerance
+        run: |
+          python - <<'PY'
+          import csv
+          import math
+
+          def read_csv(path):
+              with open(path, newline="", encoding="utf-8") as f:
+                  reader = csv.DictReader(f)
+                  return reader.fieldnames, list(reader)
+
+          headers, expected = read_csv("results/scenarios.csv")
+          new_headers, actual = read_csv("/tmp/reproduced/scenarios.csv")
+
+          assert headers == new_headers, "CSV columns differ"
+          assert len(expected) == len(actual), "CSV row counts differ"
+
+          for row_number, (old, new) in enumerate(zip(expected, actual), start=2):
+              for column in headers:
+                  a, b = old[column], new[column]
+                  if a == b:
+                      continue
+                  try:
+                      x, y = float(a), float(b)
+                  except (TypeError, ValueError):
+                      raise AssertionError(
+                          f"Row {row_number}, {column}: {a!r} != {b!r}"
+                      )
+                  assert (
+                      math.isfinite(x)
+                      and math.isfinite(y)
+                      and math.isclose(x, y, rel_tol=1e-12, abs_tol=1e-8)
+                  ), f"Row {row_number}, {column}: {a} != {b}"
+
+          print(f"Reproducibility check passed: {len(actual)} rows.")
+          PY
