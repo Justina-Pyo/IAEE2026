@@ -1,0 +1,104 @@
+{
+  "ice": {
+    "rows": 1150,
+    "riders": 108,
+    "sha256": "07d0a1ec5ebf16c01179dd370a7ed00270c46b5c412ab00529a1f29baa69b85d",
+    "distance_rider_quantiles": {
+      "0.1": 44.06163636363636,
+      "0.25": 62.47270833333334,
+      "0.5": 78.04242424242425,
+      "0.75": 106.84945075757575,
+      "0.9": 122.22274999999999
+    },
+    "distance_mean": 85.43833913043478,
+    "fuel_amount_l": {
+      "paired_rows": 940,
+      "paired_riders": 98,
+      "pooled": 0.029396694454647956,
+      "equal_rider": 0.038133912657856435,
+      "daily_ratio_mean": 0.04612846358559786,
+      "equal_rider_daily_ratio": 0.04981502114040445,
+      "loo_pooled_min": 0.02843126459495225,
+      "loo_pooled_max": 0.029805212765016,
+      "rider_ratio_p25": 0.023036335900249942,
+      "rider_ratio_p75": 0.03406377237467889
+    },
+    "fuel_cost_kes": {
+      "paired_rows": 940,
+      "paired_riders": 98,
+      "pooled": 6.3906333210891155,
+      "equal_rider": 8.290028501393277,
+      "daily_ratio_mean": 10.02803004273986,
+      "equal_rider_daily_ratio": 10.829454378513768,
+      "loo_pooled_min": 6.180757677664093,
+      "loo_pooled_max": 6.479442310499157,
+      "rider_ratio_p25": 5.007899108749988,
+      "rider_ratio_p75": 7.405493090486816
+    },
+    "maintenance_kes": {
+      "paired_rows": 940,
+      "paired_riders": 98,
+      "pooled": 1.6919394201354927,
+      "equal_rider": 1.7222275219830052,
+      "daily_ratio_mean": 3.579781228935502,
+      "equal_rider_daily_ratio": 3.381339409297188,
+      "loo_pooled_min": 1.583513146979162,
+      "loo_pooled_max": 1.722278208448577,
+      "rider_ratio_p25": 0.13271489819403842,
+      "rider_ratio_p75": 1.9056947460651352
+    }
+  },
+  "ev": {
+    "rows": 88,
+    "riders": 9,
+    "sha256": "175e2cf71b70dc14462a863bbe1f5c4c8e8389abd4fb244adea0de6e0e86884a",
+    "distance_rider_quantiles": {
+      "0.1": 47.57,
+      "0.25": 56.48916666666667,
+      "0.5": 73.96111111111111,
+      "0.75": 86.51916666666666,
+      "0.9": 97.125
+    },
+    "distance_mean": 75.02920454545455,
+    "maintenance_kes": {
+      "paired_rows": 84,
+      "paired_riders": 8,
+      "pooled": 0.31395399945999913,
+      "equal_rider": 0.2710271486344458,
+      "daily_ratio_mean": 0.4039210564281191,
+      "equal_rider_daily_ratio": 0.37387964906693105,
+      "loo_pooled_min": 0.1631618133841448,
+      "loo_pooled_max": 0.3513962730911276,
+      "rider_ratio_p25": 0.12055092757532153,
+      "rider_ratio_p75": 0.2567465581489757
+    },
+    "kwh_charging": {
+      "paired_rows": 28,
+      "paired_riders": 4,
+      "pooled": 0.04676378339401287,
+      "equal_rider": 0.047487742809665306,
+      "daily_ratio_mean": 0.06331917098134485,
+      "equal_rider_daily_ratio": 0.06124480781072928,
+      "loo_pooled_min": 0.04538794611616515,
+      "loo_pooled_max": 0.04853181618790626,
+      "rider_ratio_p25": 0.04544426450601025,
+      "rider_ratio_p75": 0.04909788265613172
+    },
+    "battery_swap_cost_kes": {
+      "paired_rows": 40,
+      "paired_riders": 4,
+      "pooled": 3.5442936285520954,
+      "equal_rider": 3.779150016506818,
+      "daily_ratio_mean": 3.9706674172923937,
+      "equal_rider_daily_ratio": 4.087659487121699,
+      "loo_pooled_min": 3.077386235235701,
+      "loo_pooled_max": 4.2555141443147795,
+      "rider_ratio_p25": 2.9816642192002836,
+      "rider_ratio_p75": 4.480719334056832
+    }
+  },
+  "provenance": {
+    "dataset_doi": "10.17632/nv3rkn24zv.1",
+    "method": "Each cost/intensity uses its own nonmissing measurement matched to positive distance on the same rider-day; pooled sum(value)/sum(distance). Missing values are not zero. Quantiles use linear interpolation. Raw identifiers omitted."
+  }
+}
